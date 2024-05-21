@@ -1,0 +1,17 @@
+<h1>Listado de ciudadanos</h1>
+
+<div *ngIf="deleteCiudadano; else noHayQueBorrar">
+  <h3>Ciudadano borrado: <small class="text-danger">{{deleteCiudadano}}</small></h3>
+</div>
+<ng-template #noHayQueBorrar>
+  <h3>No ha borrado nada. <small class="text-danger"></small></h3>
+</ng-template>
+
+<button *ngIf="ciudadanos.length > 0" class="btn btn-danger btn-sm" (click)="borrarCiudadano()">Borrar ultimo
+  ciudadano</button>
+
+
+<u class="mt-2 list-group">
+  <li class="list-group-item" *ngFor="let n of ciudadanos">{{n}}</li>
+
+</u>
